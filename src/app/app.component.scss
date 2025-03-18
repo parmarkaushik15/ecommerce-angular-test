@@ -40,3 +40,18 @@
   mat-toolbar {
     height: 64px;
   }
+
+  .network-status {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 50px;
+  }
+  
+  .online {
+    color: green;
+  }
+  
+  .offline {
+    color: red;
+  }
