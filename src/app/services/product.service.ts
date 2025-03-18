@@ -9,7 +9,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class ProductService {
 
-  private apiURL = 'https://dummyjson.com/products';
+  apiURL = 'https://dummyjson.com/products';
 
   constructor(private http: HttpClient, private dbService: NgxIndexedDBService) {}
 

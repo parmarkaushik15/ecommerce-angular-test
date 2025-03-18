@@ -6,10 +6,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-  private cartCount = new BehaviorSubject<number>(0);
+  cartCount = new BehaviorSubject<number>(0);
   cartCount$ = this.cartCount.asObservable(); 
 
-  private latestOrder = new BehaviorSubject<any>(null);
+  latestOrder = new BehaviorSubject<any>(null);
   latestOrder$ = this.latestOrder.asObservable();
  
   constructor(private dbService: NgxIndexedDBService) {
