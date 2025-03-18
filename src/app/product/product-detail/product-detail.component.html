@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content class="dialog-content">
+  <img [src]="data.thumbnail" alt="{{ data.title }}">
+  <p>{{ data.description }}</p>
+  <p>Price: ${{ data.price }}</p>
+  <p *ngIf="data.discountPercentage">Discount: {{ data.discountPercentage }}%</p>
+  <p>Stock: {{ data.stock }}</p>
+
+  <h3>Reviews</h3>
+  <mat-list *ngIf="data.reviews.length > 0; else noReviews">
+    <mat-list-item *ngFor="let review of data.reviews">
+      <mat-icon>star</mat-icon>
+      <strong>{{ review.user }}</strong>: {{ review.comment }}
+    </mat-list-item>
+  </mat-list>
+  <ng-template #noReviews>
+    <p>No reviews available.</p>
+  </ng-template>
+
+  <div class="quantity-control">
+    <button mat-mini-fab color="primary" (click)="changeQuantity(-1)">-</button>
+    <span>{{ quantity }}</span>
+    <button mat-mini-fab color="primary" (click)="changeQuantity(1)">+</button>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button color="warn" mat-dialog-close>Close</button>
+  <button mat-button color="primary" (click)="addToCart()">Add to Cart</button>
+</mat-dialog-actions>

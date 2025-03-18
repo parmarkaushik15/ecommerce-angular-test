@@ -1,0 +1,42 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+  }
+
+  .body-wrapper{
+    margin-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .spacer {
+    flex-grow: 1;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  mat-toolbar {
+    height: 64px;
+  }

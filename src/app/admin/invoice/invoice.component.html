@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Invoice - #{{ data.orderNo }}</h2>
+
+<mat-dialog-content class="invoice-content">
+  <p><strong>Date:</strong> {{ data.date | date:'medium' }}</p>
+
+  <table mat-table [dataSource]="data.items" class="invoice-table">
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Product </th>
+      <td mat-cell *matCellDef="let item"> {{ item.title }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef> Quantity </th>
+      <td mat-cell *matCellDef="let item"> {{ item.quantity }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let item"> ${{ item.price }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef> Total </th>
+      <td mat-cell *matCellDef="let item"> ${{ item.quantity * item.price }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['title', 'quantity', 'price', 'total']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['title', 'quantity', 'price', 'total'];"></tr>
+  </table>
+
+  <h3>Total: ${{ getTotal() }}</h3>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="navbar">
+    <span class="logo">My Shop</span>
+    <span class="spacer"></span>
+    
+    <nav class="nav-links">
+        <a mat-button [routerLink]="['/']" routerLinkActive="active">Products</a>
+        <a mat-button [routerLink]="['/cart']" routerLinkActive="active">Cart ({{cartItemCount}})</a>
+        <a mat-button [routerLink]="['/admin']" routerLinkActive="active">Orders</a>
+      </nav>
+  </mat-toolbar>
+<div class="body-wrapper">
+<router-outlet />
+</div>

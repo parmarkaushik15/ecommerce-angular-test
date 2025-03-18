@@ -1,0 +1,21 @@
+<div class="product-container">
+    <mat-grid-list [cols]="cols" [gutterSize]="'20px'" class="grid-container" 
+      [style]="{'grid-template-columns': getGridColumns()}">
+      
+      <mat-grid-tile *ngFor="let product of products" class="grid-item">
+        <mat-card>
+            
+          <img mat-card-image [src]="product.thumbnail" alt="{{ product.title }}">
+          <mat-card-content>
+            <h3>{{ product.title }}</h3>
+            <p>${{ product.price }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="openProductDialog(product)">View</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+      
+    </mat-grid-list>
+  </div>
+  

@@ -1,0 +1,44 @@
+.product-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .grid-container {
+    display: grid;
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .grid-item {
+    display: flex;
+    justify-content: center;
+  }
+  
+  mat-card {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+  }
+  
+  mat-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .dialog-content {
+    text-align: center;
+  }
+  
+  .quantity-control {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .quantity-control span {
+    font-size: 18px;
+    font-weight: bold;
+  }
